@@ -1,0 +1,387 @@
+<div id="glowscript" class="glowscript">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="https://www.glowscript.org/css/redmond/2.1/jquery-ui.custom.css" rel="stylesheet" />
+<link type="text/css" href="https://www.glowscript.org/css/ide.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/lib/jquery/2.1/jquery-ui.custom.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/glow.3.2.min.js"></script>
+<script type="text/javascript" src="https://www.glowscript.org/package/RSrun.3.2.min.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+// START JAVASCRIPT
+;(function() {;
+var ρσ_modules = {};
+ρσ_modules.pythonize = {};
+
+(function(){
+    function strings() {
+        var string_funcs, exclude, name;
+        string_funcs = set("capitalize strip lstrip rstrip islower isupper isspace lower upper swapcase center count endswith startswith find rfind index rindex format join ljust rjust partition rpartition replace split rsplit splitlines zfill".split(" "));
+        if (!arguments.length) {
+            exclude = (function(){
+                var s = ρσ_set();
+                s.jsset.add("split");
+                s.jsset.add("replace");
+                return s;
+            })();
+        } else if (arguments[0]) {
+            exclude = Array.prototype.slice.call(arguments);
+        } else {
+            exclude = null;
+        }
+        if (exclude) {
+            string_funcs = string_funcs.difference(set(exclude));
+        }
+        var ρσ_Iter0 = string_funcs;
+        ρσ_Iter0 = ((typeof ρσ_Iter0[Symbol.iterator] === "function") ? (ρσ_Iter0 instanceof Map ? ρσ_Iter0.keys() : ρσ_Iter0) : Object.keys(ρσ_Iter0));
+        for (var ρσ_Index0 of ρσ_Iter0) {
+            name = ρσ_Index0;
+            (ρσ_expr_temp = String.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name] = (ρσ_expr_temp = ρσ_str.prototype)[(typeof name === "number" && name < 0) ? ρσ_expr_temp.length + name : name];
+        }
+    };
+    if (!strings.__module__) Object.defineProperties(strings, {
+        __module__ : {value: "pythonize"}
+    });
+
+    ρσ_modules.pythonize.strings = strings;
+})();
+async function __main__() {
+"use strict";
+    var display = canvas;
+    var scene = canvas();
+
+    var version, print, arange, __name__, type, ρσ_ls, angular_velocity, t, dt, sun, mercury_a, mercury_eccentricity, mercury_b, mercury, mercury_label, venus_a, venus_eccentricity, venus_b, venus, venus_label, earth_a, earth_eccentricity, earth_b, earth, earth_label, mars_a, mars_eccentricity, mars_b, mars, mars_label, jupiter_a, jupiter_eccentricity, jupiter_b, jupiter, jupiter_label, saturn_a, saturn_eccentricity, saturn_b, saturn, saturn_label, uranus_a, uranus_eccentricity, uranus_b, uranus, uranus_label, neptune_a, neptune_eccentricity, neptune_b, neptune, neptune_label, donaldjohanson_a, donaldjohanson_eccentricity, donaldjohanson_b, donaldjohanson, donaldjohanson_label, psyche_a, psyche_eccentricity, psyche_b, psyche, psyche_label, temple_a, temple_eccentricity, temple_b, temple, temple_label, gaspra_a, gaspra_eccentricity, gaspra_b, gaspra, gaspra_label, apophis_a, apophis_eccentricity, apophis_b, apophis, apophis_label, bennu_a, bennu_eccentricity, bennu_b, bennu, bennu_label, ryugu_a, ryugu_eccentricity, ryugu_b, ryugu, ryugu_label, polymele_a, polymele_eccentricity, polymele_b, polymele, polymele_label, leucus_a, leucus_eccentricity, leucus_b, leucus, leucus_label, borrelly_a, borrelly_eccentricity, borrelly_b, borrelly, borrelly_label, theta, mercury_pos_vec, venus_pos_vec, mars_pos_vec, jupiter_pos_vec, saturn_pos_vec, uranus_pos_vec, neptune_pos_vec, donaldjohanson_pos_vec, psyche_pos_vec, temple_pos_vec, gaspra_pos_vec, apophis_pos_vec, bennu_pos_vec, ryugu_pos_vec, polymele_pos_vec, leucus_pos_vec, borrelly_pos_vec;
+    version = ρσ_list_decorate([ "3.2", "glowscript" ]);
+    Array.prototype['+'] = function(r) {return this.concat(r)}
+    Array.prototype['*'] = function(r) {return __array_times_number(this, r)}
+    window.__GSlang = "vpython";
+    print = GSprint;
+    arange = range;
+    __name__ = "__main__";
+    type = pytype;
+    var strings = ρσ_modules.pythonize.strings;
+
+    strings();
+    "3";
+    angular_velocity = 1;
+    "4";
+    t = 0;
+    "5";
+    dt = .01;
+    "8";
+    ρσ_interpolate_kwargs.call(this, canvas, [ρσ_desugar_kwargs({width: 1145, height: 600, resizable: false})]);
+    "9";
+    sun = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 100, color: color.yellow, emissive: true})]);
+    "11";
+    angular_velocity = 1;
+    "12";
+    t = 0;
+    "13";
+    dt = .01;
+    "15";
+    sun = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 100, color: color.yellow, emissive: true})]);
+    "17";
+    mercury_a = 164.13;
+    "18";
+    mercury_eccentricity = .2056;
+    "19";
+    mercury_b = mercury_a["*"](sqrt(1["-"](1["*"](Math.pow(mercury_eccentricity, 2)))));
+    "20";
+    mercury = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(mercury_a, 0, 0), make_trail: true, color: color.gray(.5)})]);
+    "21";
+    mercury_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: mercury.pos, text: "Mercury", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "23";
+    venus_a = 219.84;
+    "24";
+    venus_eccentricity = .0068;
+    "25";
+    venus_b = venus_a["*"](sqrt(1["-"](1["*"](Math.pow(venus_eccentricity, 2)))));
+    "26";
+    venus = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 12.5, pos: vec(venus_a, 0, 0), make_trail: true, color: color.orange, emmisive: true})]);
+    "27";
+    venus_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: venus.pos, text: "Venus", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "29";
+    earth_a = 248.16;
+    "30";
+    earth_eccentricity = .0167;
+    "31";
+    earth_b = earth_a["*"](sqrt(1["-"](1["*"](Math.pow(earth_eccentricity, 2)))));
+    "32";
+    earth = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 12.5, pos: vec(earth_a, 0, 0), make_trail: true, texture: textures.earth})]);
+    "33";
+    earth_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: earth.pos, text: "Earth", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "35";
+    mars_a = 266.11;
+    "36";
+    mars_eccentricity = .0935;
+    "37";
+    mars_b = mars_a["*"](sqrt(1["-"](1["*"](Math.pow(mars_eccentricity, 2)))));
+    "38";
+    mars = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 6.96, pos: vec(mars_a, 0, 0), make_trail: true, color: color.red})]);
+    "39";
+    mars_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: mars.pos, text: "Mars", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "41";
+    jupiter_a = 961.76;
+    "42";
+    jupiter_eccentricity = .0487;
+    "43";
+    jupiter_b = jupiter_a["*"](sqrt(1["-"](1["*"](Math.pow(jupiter_eccentricity, 2)))));
+    "44";
+    jupiter = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 140, pos: vec(jupiter_a, 0, 0), make_trail: true, color: color.orange})]);
+    "45";
+    jupiter_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: jupiter.pos, text: "Jupiter", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "47";
+    saturn_a = 1685.84;
+    "48";
+    saturn_eccentricity = .052;
+    "49";
+    saturn_b = saturn_a["*"](sqrt(1["-"](1["*"](Math.pow(saturn_eccentricity, 2)))));
+    "50";
+    saturn = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 119.43, pos: vec(saturn_a, 0, 0), make_trail: true, color: color.orange})]);
+    "51";
+    saturn_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: saturn.pos, text: "Saturn", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "53";
+    uranus_a = 3275;
+    "54";
+    uranus_eccentricity = .0469;
+    "55";
+    uranus_b = uranus_a["*"](sqrt(1["-"](1["*"](Math.pow(uranus_eccentricity, 2)))));
+    "56";
+    uranus = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 52, pos: vec(uranus_a, 0, 0), make_trail: true, color: color.cyan})]);
+    "57";
+    uranus_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: uranus.pos, text: "Uranus", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "59";
+    neptune_a = 5e3;
+    "60";
+    neptune_eccentricity = .0097;
+    "61";
+    neptune_b = neptune_a["*"](sqrt(1["-"](1["*"](Math.pow(neptune_eccentricity, 2)))));
+    "62";
+    neptune = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 50.57, pos: vec(neptune_a, 0, 0), make_trail: true, color: color.blue})]);
+    "63";
+    neptune_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: neptune.pos, text: "Neptune", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "65";
+    donaldjohanson_a = 498.94;
+    "66";
+    donaldjohanson_eccentricity = .187;
+    "67";
+    donaldjohanson_b = donaldjohanson_a["*"](sqrt(1["-"](1["*"](Math.pow(donaldjohanson_eccentricity, 2)))));
+    "68";
+    donaldjohanson = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(donaldjohanson_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "69";
+    donaldjohanson_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: donaldjohanson.pos, text: "Donaldjohanson", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "71";
+    psyche_a = 588.43;
+    "72";
+    psyche_eccentricity = .134;
+    "73";
+    psyche_b = psyche_a["*"](sqrt(1["-"](1["*"](Math.pow(psyche_eccentricity, 2)))));
+    "74";
+    psyche = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(psyche_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "75";
+    psyche_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: psyche.pos, text: "16Psyche", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "77";
+    temple_a = 626.07;
+    "78";
+    temple_eccentricity = .51;
+    "79";
+    temple_b = temple_a["*"](sqrt(1["-"](1["*"](Math.pow(temple_eccentricity, 2)))));
+    "80";
+    temple = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(temple_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "81";
+    temple_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: temple.pos, text: "Temple1", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "83";
+    gaspra_a = 469.67;
+    "84";
+    gaspra_eccentricity = .173;
+    "85";
+    gaspra_b = gaspra_a["*"](sqrt(1["-"](1["*"](Math.pow(gaspra_eccentricity, 2)))));
+    "86";
+    gaspra = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(gaspra_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "87";
+    gaspra_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: gaspra.pos, text: "Gaspra", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "89";
+    apophis_a = 254.73;
+    "90";
+    apophis_eccentricity = .191;
+    "91";
+    apophis_b = apophis_a["*"](sqrt(1["-"](1["*"](Math.pow(apophis_eccentricity, 2)))));
+    "92";
+    apophis = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(apophis_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "93";
+    apophis_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: apophis.pos, text: "⚠️Apophis", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "95";
+    bennu_a = 289;
+    "96";
+    bennu_eccentricity = .204;
+    "97";
+    bennu_b = bennu_a["*"](sqrt(1["-"](1["*"](Math.pow(bennu_eccentricity, 2)))));
+    "98";
+    bennu = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(bennu_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "99";
+    bennu_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: bennu.pos, text: "Bennu", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "101";
+    ryugu_a = 299;
+    "102";
+    ryugu_eccentricity = .191;
+    "103";
+    ryugu_b = ryugu_a["*"](sqrt(1["-"](1["*"](Math.pow(ryugu_eccentricity, 2)))));
+    "104";
+    ryugu = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 5, pos: vec(ryugu_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "105";
+    ryugu_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: ryugu.pos, text: "Ryugu", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "107";
+    polymele_a = 967.3;
+    "108";
+    polymele_eccentricity = .097;
+    "109";
+    polymele_b = polymele_a["*"](sqrt(1["-"](1["*"](Math.pow(polymele_eccentricity, 2)))));
+    "110";
+    polymele = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 7, pos: vec(polymele_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "111";
+    polymele_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: polymele.pos, text: "Polymele", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "113";
+    leucus_a = 988;
+    "114";
+    leucus_eccentricity = .066;
+    "115";
+    leucus_b = leucus_a["*"](sqrt(1["-"](1["*"](Math.pow(leucus_eccentricity, 2)))));
+    "116";
+    leucus = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 7, pos: vec(leucus_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "117";
+    leucus_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: leucus.pos, text: "Leucus", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "119";
+    borrelly_a = 703.84;
+    "120";
+    borrelly_eccentricity = .638;
+    "121";
+    borrelly_b = borrelly_a["*"](sqrt(1["-"](1["*"](Math.pow(borrelly_eccentricity, 2)))));
+    "122";
+    borrelly = ρσ_interpolate_kwargs.call(this, sphere, [ρσ_desugar_kwargs({radius: 7, pos: vec(borrelly_a, 0, 0), make_trail: false, color: color.gray(.9)})]);
+    "123";
+    borrelly_label = ρσ_interpolate_kwargs.call(this, label, [ρσ_desugar_kwargs({pos: borrelly.pos, text: "Borrelly", xoffset: 20, yoffset: 20, space: 30, height: 15, font: "sans"})]);
+    "126";
+    while (true) {
+        "127";
+        (await rate(100));
+        "128";
+        theta = angular_velocity["*"](t);
+        "131";
+        mercury_pos_vec = vector(mercury_a["*"](cos(theta)), 0, mercury_b["*"](sin(theta)));
+        "132";
+        mercury.pos = ρσ_interpolate_kwargs.call(this, rotate, [mercury_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.122), axis: vec(0, 0, 1)})]));
+        "133";
+        mercury_label.pos = mercury.pos;
+        "136";
+        venus_pos_vec = vector(venus_a["*"](cos(theta)), 0, venus_b["*"](sin(theta)));
+        "137";
+        venus.pos = ρσ_interpolate_kwargs.call(this, rotate, [venus_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0592), axis: vec(0, 0, 1)})]));
+        "138";
+        venus_label.pos = venus.pos;
+        "141";
+        earth.pos = vector(earth_a["*"](cos(theta)), 0, earth_b["*"](sin(theta)));
+        "142";
+        earth_label.pos = earth.pos;
+        "145";
+        mars_pos_vec = vector(mars_a["*"](cos(theta)), 0, mars_b["*"](sin(theta)));
+        "146";
+        mars.pos = ρσ_interpolate_kwargs.call(this, rotate, [mars_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0323), axis: vec(0, 0, 1)})]));
+        "147";
+        mars_label.pos = mars.pos;
+        "150";
+        jupiter_pos_vec = vector(jupiter_a["*"](cos(theta)), 0, jupiter_b["*"](sin(theta)));
+        "151";
+        jupiter.pos = ρσ_interpolate_kwargs.call(this, rotate, [jupiter_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0227), axis: vec(0, 0, 1)})]));
+        "152";
+        jupiter_label.pos = jupiter.pos;
+        "155";
+        saturn_pos_vec = vector(saturn_a["*"](cos(theta)), 0, saturn_b["*"](sin(theta)));
+        "156";
+        saturn.pos = ρσ_interpolate_kwargs.call(this, rotate, [saturn_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0433), axis: vec(0, 0, 1)})]));
+        "157";
+        saturn_label.pos = saturn.pos;
+        "160";
+        uranus_pos_vec = vector(uranus_a["*"](cos(theta)), 0, uranus_b["*"](sin(theta)));
+        "161";
+        uranus.pos = ρσ_interpolate_kwargs.call(this, rotate, [uranus_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0134), axis: vec(0, 0, 1)})]));
+        "162";
+        uranus_label.pos = uranus.pos;
+        "165";
+        neptune_pos_vec = vector(neptune_a["*"](cos(theta)), 0, neptune_b["*"](sin(theta)));
+        "166";
+        neptune.pos = ρσ_interpolate_kwargs.call(this, rotate, [neptune_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0308), axis: vec(0, 0, 1)})]));
+        "167";
+        neptune_label.pos = neptune.pos;
+        "170";
+        donaldjohanson_pos_vec = vector(donaldjohanson_a["*"](cos(theta["+"](.3))), 0, donaldjohanson_b["*"](sin(theta["+"](.3))));
+        "171";
+        donaldjohanson.pos = ρσ_interpolate_kwargs.call(this, rotate, [donaldjohanson_pos_vec].concat([ρσ_desugar_kwargs({angle: .0582, axis: vec(0, 0, 1)})]));
+        "172";
+        donaldjohanson_label.pos = donaldjohanson.pos;
+        "175";
+        psyche_pos_vec = vector(psyche_a["*"](cos(theta["+"](.5))), 0, psyche_b["*"](sin(theta["+"](.5))));
+        "176";
+        psyche.pos = ρσ_interpolate_kwargs.call(this, rotate, [psyche_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0772), axis: vec(0, 0, 1)})]));
+        "177";
+        psyche_label.pos = psyche.pos;
+        "180";
+        temple_pos_vec = vector(temple_a["*"](cos(theta["+"](.1))), 0, temple_b["*"](sin(theta["+"](.1))));
+        "181";
+        temple.pos = ρσ_interpolate_kwargs.call(this, rotate, [temple_pos_vec].concat([ρσ_desugar_kwargs({angle: .1827, axis: vec(0, 0, 1)})]));
+        "182";
+        temple_label.pos = temple.pos;
+        "185";
+        gaspra_pos_vec = vector(gaspra_a["*"](cos(theta["+"](.4))), 0, gaspra_b["*"](sin(theta["+"](.4))));
+        "186";
+        gaspra.pos = ρσ_interpolate_kwargs.call(this, rotate, [gaspra_pos_vec].concat([ρσ_desugar_kwargs({angle: .0717, axis: vec(0, 0, 1)})]));
+        "187";
+        gaspra_label.pos = gaspra.pos;
+        "190";
+        apophis_pos_vec = vector(apophis_a["*"](cos(theta["+"](.6))), 0, apophis_b["*"](sin(theta["+"](.6))));
+        "191";
+        apophis.pos = ρσ_interpolate_kwargs.call(this, rotate, [apophis_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.0582), axis: vec(0, 0, 1)})]));
+        "192";
+        apophis_label.pos = apophis.pos;
+        "195";
+        bennu_pos_vec = vector(bennu_a["*"](cos(theta["+"](.7))), 0, bennu_b["*"](sin(theta["+"](.7))));
+        "196";
+        bennu.pos = ρσ_interpolate_kwargs.call(this, rotate, [bennu_pos_vec].concat([ρσ_desugar_kwargs({angle: .105, axis: vec(0, 0, 1)})]));
+        "197";
+        bennu_label.pos = bennu.pos;
+        "200";
+        ryugu_pos_vec = vector(ryugu_a["*"](cos(theta["+"](.2))), 0, ryugu_b["*"](sin(theta["+"](.2))));
+        "201";
+        ryugu.pos = ρσ_interpolate_kwargs.call(this, rotate, [ryugu_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.1023), axis: vec(0, 0, 1)})]));
+        "202";
+        ryugu_label.pos = ryugu.pos;
+        "205";
+        polymele_pos_vec = vector(polymele_a["*"](cos(theta["+"](.3))), 0, polymele_b["*"](sin(theta["+"](.3))));
+        "206";
+        polymele.pos = ρσ_interpolate_kwargs.call(this, rotate, [polymele_pos_vec].concat([ρσ_desugar_kwargs({angle: .227, axis: vec(0, 0, 1)})]));
+        "207";
+        polymele_label.pos = polymele.pos;
+        "210";
+        leucus_pos_vec = vector(leucus_a["*"](cos(theta["+"](.5))), 0, leucus_b["*"](sin(theta["+"](.5))));
+        "211";
+        leucus.pos = ρσ_interpolate_kwargs.call(this, rotate, [leucus_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.2007), axis: vec(0, 0, 1)})]));
+        "212";
+        leucus_label.pos = leucus.pos;
+        "215";
+        borrelly_pos_vec = vector(borrelly_a["*"](cos(theta["+"](.5))), 0, borrelly_b["*"](sin(theta["+"](.5))));
+        "216";
+        borrelly.pos = ρσ_interpolate_kwargs.call(this, rotate, [borrelly_pos_vec].concat([ρσ_desugar_kwargs({angle: 1["-u"]()["*"](.5235), axis: vec(0, 0, 1)})]));
+        "217";
+        borrelly_label.pos = borrelly.pos;
+        "219";
+        t=t["+"](dt);
+    }
+};
+if (!__main__.__module__) Object.defineProperties(__main__, {
+    __module__ : {value: null}
+});
+
+;$(function(){ window.__context = { glowscript_container: $("#glowscript").removeAttr("id") }; __main__() })})()
+// END JAVASCRIPT
+
+//--><!]]></script>
+</div>
